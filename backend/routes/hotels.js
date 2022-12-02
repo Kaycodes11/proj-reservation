@@ -6,12 +6,19 @@ const router = express.Router();
 
 router.post("/", verifyAdmin, HotelController.createHotel);
 
+router.get("/", HotelController.getHotels);
+
+router.get("/countByCity", HotelController.countByCity);
+
+router.get("/countByType", HotelController.countByType);
+
 router.put("/:id", verifyAdmin, HotelController.updateHotel);
 
 router.delete("/:id", verifyAdmin, HotelController.deleteHotel);
 
-router.get("/:id", HotelController.getHotelById);
+router.get("/find/:id", HotelController.getHotelById);
 
-router.get("/", HotelController.getHotels);
+router.get("/room/:id", HotelController.getHotelRooms);
+
 
 export default router;
