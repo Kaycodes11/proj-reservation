@@ -1,6 +1,7 @@
 import {ErrorMiddleware} from "../middleware/error.middleware.js";
 import {Hotel} from "../models/Hotel.js";
 import {Room} from "../models/Room.js";
+import hotels from "../routes/hotels.js";
 
 export const createHotel = async (req, res, next) => {
     const newHotel = new Hotel(req.body);
@@ -104,7 +105,7 @@ export const getHotelRooms = async (req, res, next) => {
     try {
         const hotel = await Hotel.findById(req.params.id);
         const list = await Promise.all(hotel.rooms.map((room) => Room.findById(room)));
-        res.status(200).json(hotel);
+        res.status(200).json(list)
     } catch (err) {
         next(err);
     }

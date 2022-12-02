@@ -21,4 +21,5 @@ router.get("/find/:id", HotelController.getHotelById);
 router.get("/room/:id", HotelController.getHotelRooms);
 
 
+
 export default router;

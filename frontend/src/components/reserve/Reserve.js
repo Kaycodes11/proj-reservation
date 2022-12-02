@@ -28,7 +28,7 @@ const Reserve = ({setOpen, hotelId}) => {
         return dates;
     };
 
-    const alldates = getDatesInRange(dates[0].startDate, dates[0].endDate);
+    const alldates = dates[0] && getDatesInRange(dates[0].startDate, dates[0].endDate);
 
     const isAvailable = (roomNumber) => {
         const isFound = roomNumber.unavailableDates.some((date) =>
