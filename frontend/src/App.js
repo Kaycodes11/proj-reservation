@@ -7,6 +7,7 @@ import Home from "./pages/home/Home";
 import Hotel from "./pages/hotel/Hotel";
 import List from "./pages/list/List";
 
+// this is the ui
 function App() {
   return (
     <BrowserRouter>
